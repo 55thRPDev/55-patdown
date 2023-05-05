@@ -12,9 +12,11 @@ as well as minimum amount of drugs needed to be detected in a patdown
 
 UPDATE COMING SOON
 
-Notice for when nothing is found
-Animation for player being searched.
-Potential for officer to hurt them selves if suspect has sharp object in pockets
+-Notice for when nothing is found
+
+-Animation for player being searched.
+
+-Potential for officer to hurt them selves if suspect has sharp object in pockets
 
 
 
