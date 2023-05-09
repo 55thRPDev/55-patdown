@@ -23,7 +23,7 @@ RegisterNetEvent('patdown:server:PatDownPlayer', function(playerId)
     if not Player or not TestedPlayer then return end
         for slot, item in pairs(TestedPlayer.PlayerData.items) do
             if WeaponPatdownItems[item.name] then
-               TriggerClientEvent('QBCore:Notify', src, "You feel something hard in thier pocket ", 'success')
+               TriggerClientEvent('QBCore:Notify', src, "You feel something hard in their pocket ", 'success')
                if Player.Functions.AddItem(item.name, amount, false, item.info) then
                     TriggerClientEvent('inventory:client:ItemBox',src, QBCore.Shared.Items[item.name], "add")
                     TriggerClientEvent("inventory:client:UpdatePlayerInventory", src, true)
@@ -39,7 +39,7 @@ RegisterNetEvent('patdown:server:PatDownPlayer', function(playerId)
                 end
             end
             if DrugPatdownItems[item.name] and item.amount >= Config.MinDrugs then
-                TriggerClientEvent('QBCore:Notify', src, "You feel a bag of something in thier pocket ", 'success')
+                TriggerClientEvent('QBCore:Notify', src, "You feel a bag of something in their pocket ", 'success')
                 if  Player.Functions.AddItem(item.name, item.amount) then
                     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.name], "add", item.amount)
                     TestedPlayer.Functions.RemoveItem(item.name, item.amount, slot)
@@ -47,7 +47,7 @@ RegisterNetEvent('patdown:server:PatDownPlayer', function(playerId)
                     TriggerClientEvent('QBCore:Notify', playerId, "They found your drugs! ", 'error')
                     TriggerClientEvent('QBCore:Notify', src, item.amount .. "x " .. item.name .. " found on person ", 'error')
                 else
-                    QBCore.Functions.Notify(src, "You found something, but your inventory is full", "error")
+                    QBCore.Functions.Notify(src, "You found something, but your pockets are full", "error")
                     TriggerClientEvent("inventory:client:UpdatePlayerInventory", src, false)
                     TriggerClientEvent("inventory:client:UpdatePlayerInventory", playerId, false)
                 end
